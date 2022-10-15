@@ -26,6 +26,34 @@ function App() {
               NavBar
             </div>
           </div>
+          <div>
+            <Routes>
+              {/* Dashboard */}
+              <Route path="/" element="ECommerce" />
+              <Route path="/ecommerce" element="ECommerce" />
+
+              {/* Pages */}
+              <Route path="/orders" element="Orders" />
+              <Route path="/employees" element="Employees" />
+              <Route path="/customers" element="Customers" />
+
+              {/* Apps */}
+              <Route path="/kanban" element="kanban" />
+              <Route path="/editor" element="Editor" />
+              <Route path="/calendar" element="Calendar" />
+              <Route path="/color-piker" element="ColorPiker" />
+
+              {/* Charts */}
+              <Route path="/line" element="Line" />
+              <Route path="/area" element="Area" />
+              <Route path="/bar" element="Bar" />
+              <Route path="/pie" element="Pie" />
+              <Route path="/financial" element="financial" />
+              <Route path="/color-mapping" element="colorMapping" />
+              <Route path="/pyramid" element="Pyramid" />
+              <Route path="/stacked" element="Stacked" />
+            </Routes>
+          </div>
         </div>
       </BrowserRouter >
     </div >
