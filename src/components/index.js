@@ -4,7 +4,6 @@ import ChartsHeader from './ChartsHeader';
 import Chat from './Chat';
 import Footer from './Footer';
 import Header from './Header';
-import index from './index';
 import Navbar from './Navbar';
 import Notification from './Notification';
 import Sidebar from './Sidebar';
@@ -22,7 +21,6 @@ export {
   Chat,
   Footer,
   Header,
-  index,
   Navbar,
   Notification,
   Sidebar,
