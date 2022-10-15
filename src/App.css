@@ -1,41 +1,102 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+
+.sidebar,
+.navbar {
+  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+}
+.nav-item,
+.navbar,
+.sidebar {
+  z-index: 10000;
+}
+
+.e-grid .e-gridheader tr:first-child th {
+  background-color: #03c9d7;
+  color: white;
+}
+.e-pager .e-currentitem,
+.e-pager .e-currentitem:hover {
+  background-color: #03c9d7;
+}
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment {
+  background: #03c9d7;
+}
+.e-checkbox-wrapper .e-frame.e-check,
+.e-css.e-checkbox-wrapper .e-frame.e-check {
+  background: #03c9d7;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4f5f5;
+}
+/* color-picker style  */
+
+/* Common sample level styles */
+#inline-control {
+  width: 100%;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+#inline-control .col-xs-12 {
+  margin: 10px 0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#inline-control h4 {
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.e-bigger #inline-control h4 {
+  font-size: 20px;
+}
+#inline-control.e-mobile-control h4 {
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Preview area styles */
+#inline-control #preview {
+  background: transparent
+    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png')
+    no-repeat;
+  display: inline-block;
+  height: 80px;
+  margin: 10px 0;
+  width: 300px;
+  background-color: #008000;
+}
+#inline-control.e-mobile-control #preview {
+  background: transparent
+    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen_mobile.png')
+    no-repeat;
+  background-color: #008000;
+  height: 35px;
+  width: 300px;
+}
+.highcontrast #inline-control #preview {
+  background: transparent
+    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen_highcontrast.png')
+    no-repeat;
+  background-color: #008000;
+  border-radius: 20px;
+}
+.highcontrast #inline-control.e-mobile-control #preview {
+  background: transparent
+    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen_mobile_highcontrast.png')
+    no-repeat;
+  background-color: #008000;
 }
 
-.card {
-  padding: 2em;
+/* Common sample level styles for mobile */
+#inline-control.e-mobile-control #inline-content {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+#inline-control.e-mobile-control #inline-content .col-xs-12 {
+  flex: 0 0 auto;
+  margin-top: 5px;
 }
 
-.read-the-docs {
-  color: #888;
-}
