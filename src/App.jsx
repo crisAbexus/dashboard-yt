@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useStateContext } from "./context/ContexProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -20,7 +21,7 @@ import {
 } from './pages'
 
 function App() {
-  const [activeMenu, setActiveMenu] = useState(true);
+  const { activeMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
