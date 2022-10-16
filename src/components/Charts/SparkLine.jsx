@@ -1,11 +1,9 @@
 import React from 'react';
 import { SparklineComponent, Inject, SparklineTooltip } from '@syncfusion/ej2-react-charts';
-import { useStateContext } from '../../context/ContexProvider';
 /* import { useStateContext } from '../../context/ContextProvider'; */
+import { useStateContext } from '../../context/ContexProvider';
 
 const SparkLine = ({ id, data, type, color, width, height }) => {
-  console.log(`🇸🇱%cSparkLine.jsx:7 - data`, 'font-weight:bold; background:#25da00;color:#fff;'); //DELETEME
-  console.log(data); // DELETEME
   const { currentColor } = useStateContext();
 
   return (
@@ -17,12 +15,9 @@ const SparkLine = ({ id, data, type, color, width, height }) => {
       valueType="Numeric"
       fill={color}
       border={{ color: currentColor, width: 2 }}
-      dataSource={data}
-      xName="x"
-      yName="yval"
-      type={type}
       tooltipSettings={{
         visible: true,
+        // eslint-disable-next-line no-template-curly-in-string
         format: '${x} : data ${yval}',
         trackLineSettings: {
           visible: true,
@@ -30,6 +25,10 @@ const SparkLine = ({ id, data, type, color, width, height }) => {
         },
       }}
       markerSettings={{ visible: ['All'], size: 2.5, fill: currentColor }}
+      dataSource={data}
+      xName="x"
+      yName="yval"
+      type={type}
     >
       <Inject services={[SparklineTooltip]} />
 
