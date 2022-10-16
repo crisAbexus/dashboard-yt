@@ -6,4 +6,4 @@ const Financial = () => {
   )
 }
 
-export default FinancialFinancial
+export default Financial

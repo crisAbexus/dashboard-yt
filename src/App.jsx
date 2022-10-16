@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import './App.css'
-import { Footer, Navbar, Sidebar, ThemeSettings, } from './components'
+import { Footer, Navbar, Sidebar, ThemeSettings, LineChart } from './components'
 import {
   Calendar,
   ColorPicker,
@@ -11,12 +11,9 @@ import {
   Ecommerce,
   Editor,
   Employees,
-  Home,
-  Kanban,
   Orders,
   Area,
   Bar,
-  Financial,
   Pie,
   Pyramid,
   Stacked,
@@ -49,8 +46,8 @@ function App() {
           <div>
             <Routes>
               {/* Dashboard */}
-              <Route path="/" element={<ECommerce />} />
-              <Route path="/ecommerce" element={<ECommerce />} />
+              <Route path="/" element={<Ecommerce />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
 
               {/* Pages */}
               <Route path="/orders" element={<Orders />} />
@@ -61,10 +58,10 @@ function App() {
               <Route path="/kanban" element={<kanban />} />
               <Route path="/editor" element={<Editor />} />
               <Route path="/calendar" element={<Calendar />} />
-              <Route path="/color-piker" element={<ColorPiker />} />
+              <Route path="/color-piker" element={<ColorPicker />} />
 
               {/* Charts */}
-              <Route path="/line" element={<Line />} />
+              <Route path="/line" element={<LineChart />} />
               <Route path="/area" element={<Area />} />
               <Route path="/bar" element={<Bar />} />
               <Route path="/pie" element={<Pie />} />

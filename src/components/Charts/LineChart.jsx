@@ -6,4 +6,4 @@ const LineChart = () => {
   )
 }
 
-export default LineChartLineChart
+export default LineChart;
