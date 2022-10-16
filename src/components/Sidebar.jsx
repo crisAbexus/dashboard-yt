@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStateContext } from "../context/ContexProvider";
+import { useStateContext } from '../context/ContextProvider';
 import { Link, NavLink } from 'react-router-dom';
 import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";

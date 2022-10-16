@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useStateContext } from "./context/ContexProvider";
+import { useStateContext } from "./context/ContextProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
