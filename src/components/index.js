@@ -1,5 +1,5 @@
 import Button from './Button';
-import Cart from 'Cart';
+import Cart from './Cart';
 import ChartsHeader from './ChartsHeader';
 import Chat from './Chat';
 import Footer from './Footer';
