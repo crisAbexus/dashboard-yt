@@ -21,9 +21,11 @@ import {
 } from './pages'
 
 function App() {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext();
+  console.log(`😇%cApp.jsx:25 - currentMode`, 'font-weight:bold; background:#679800;color:#fff;'); //DELETEME
+  console.log(currentMode); // DELETEME
   return (
-    <div>
+    <div className={currentMode === 'dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000', }}>
