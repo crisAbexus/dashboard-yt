@@ -10,12 +10,14 @@ const initialState = {
 }
 
 export const ContextProvider = ({ children }) => {
-  const [activeMenu, setActiveMenu] = useState(true);
+  const [activeMenu, setActiveMenu] = useState(false);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined);
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true })
   }
+  /* const currentColor: 'orange-theme', */
+  const [currentColor, setcurrentColor] = useState('#1A97F5');
   useEffect(() => {
     const handleResize = () => {
       setScreenSize(window.innerWidth);
@@ -28,15 +30,15 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (screen <= 900) {
-      setActiveMenu(false);
-    } else {
       setActiveMenu(true);
+    } else {
+      setActiveMenu(false);
     }
   }, [screenSize])
   return (
-    <StateContext.Provider value={{ screenSize, setScreenSize, test: 'test', activeMenu, setActiveMenu, isClicked, handleClick }}>
+    <StateContext.Provider value={{ screenSize, setScreenSize, test: 'test', activeMenu, setActiveMenu, isClicked, handleClick, currentColor }}>
       {children}
-    </StateContext.Provider>
+    </StateContext.Provider >
   )
 }
 
