@@ -7,7 +7,7 @@ import { themeColors } from "../data/dummy";
 import { useStateContext } from '../context/ContextProvider';
 
 const ThemeSettings = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, currentMode, setColor, setMode, setThemeSettings } = useStateContext();
   return (
     <div className="bg-black/50 w-screen fixed nav-item top-0 right-0">
       <div className="float-right h-screen dark:text-gray-200 bg-white dark:[#484B52] w-400">
@@ -16,7 +16,9 @@ const ThemeSettings = () => {
           <button
             type="button"
             className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
-            onClick={() => { }}
+            onClick={() => {
+              setThemeSettings(false)
+            }}
             style={{ color: 'rgb(153,171,180)', borderRadius: '50%' }}
           >
             <MdOutlineCancel />
@@ -31,8 +33,8 @@ const ThemeSettings = () => {
               name="theme"
               value="light"
               className="cursor-pointer"
-              onChange={() => { }}
-              checked={true}
+              onChange={setMode}
+              checked={currentMode === 'light'}
             />
             <label
               htmlFor="light"
@@ -48,8 +50,8 @@ const ThemeSettings = () => {
               name="theme"
               value="dark"
               className="cursor-pointer"
-              onChange={() => { }}
-              checked={true}
+              onChange={setMode}
+              checked={currentMode === 'dark'}
             />
             <label
               htmlFor="dark"
@@ -62,12 +64,6 @@ const ThemeSettings = () => {
           <p className="font-semibold text-lg">Theme Colors</p>
           <div className="flex gap-3">
             {themeColors.map((item, index) => {
-              console.log(`🍘%cThemeSettings.jsx:65 - item`, 'font-weight:bold; background:#a75800;color:#fff;'); //DELETEME
-              console.log(item); // DELETEME
-              console.log(`♉%cThemeSettings.jsx:67 - currentColor`, 'font-weight:bold; background:#a95600;color:#fff;'); //DELETEME
-              console.log(currentColor); // DELETEME
-              console.log(`📡%cThemeSettings.jsx:69 - item.color === currentColor`, 'font-weight:bold; background:#ab5400;color:#fff;'); //DELETEME
-              console.log(item.color === currentColor); // DELETEME
               return (
                 <TooltipComponent key={index} content={item.name} position="TopCenter">
                   <div className="relative mt-2 cursor-pointer flex gap-5 items-center">
@@ -75,7 +71,7 @@ const ThemeSettings = () => {
                       type="button"
                       className="h-10 w-10 rounded-full cursor-pointer"
                       style={{ backgroundColor: item.color }}
-                      onClick={() => { }}
+                      onClick={() => setColor(item.color)}
                     >
                       <BsCheck className={`ml-2 text-2xl text-white ${(item.color === currentColor) ? 'block' : 'hidden'}`} />
                     </button>

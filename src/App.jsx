@@ -21,14 +21,23 @@ import {
 } from './pages'
 
 function App() {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
   return (
     <div>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000', }}>
             <TooltipComponent content="Settings" position="Top">
-              <button type="button" className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white" style={{ background: 'blue', borderRadius: '50%' }}>
+              <button
+                onClick={() => {
+                  console.log(`🍯%cApp.jsx:33 - themeSettings`, 'font-weight:bold; background:#7a8500;color:#fff;'); //DELETEME
+                  console.log(themeSettings); // DELETEME
+                  setThemeSettings(true)
+                }}
+                type="button"
+                className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+                style={{ background: 'blue', borderRadius: '50%' }}
+              >
                 <FiSettings />
               </button>
             </TooltipComponent>
@@ -44,7 +53,8 @@ function App() {
               <Navbar />
             </div>
             <div>
-              <ThemeSettings />
+              {(themeSettings) && < ThemeSettings />
+              }
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />

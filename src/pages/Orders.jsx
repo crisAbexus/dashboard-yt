@@ -16,6 +16,7 @@ const Orders = () => {
         dataSource={ordersData}
         allowPaging
         allowSorting
+        toolbar={['Search']}
       >
         <ColumnsDirective>
           {ordersGrid.map((item, index) => {

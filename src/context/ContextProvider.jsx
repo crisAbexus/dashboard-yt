@@ -16,8 +16,22 @@ export const ContextProvider = ({ children }) => {
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true })
   }
-  /* const currentColor: 'orange-theme', */
-  const [currentColor, setcurrentColor] = useState('#1A97F5');
+  const [currentColor, setCurrentColor] = useState('#1A97F5');
+  const [currentMode, setCurrentMode] = useState('dark');
+  const [themeSettings, setThemeSettings] = useState(false);
+
+  const setColor = (color) => {
+    setCurrentColor(color);
+    localStorage.setItem('colorMode', color);
+    setThemeSettings(false);
+  }
+
+  const setMode = (mode) => {
+    setCurrentMode(mode);
+    localStorage.setItem('themeMode', mode);
+    setThemeSettings(false);
+  }
+
   useEffect(() => {
     const handleResize = () => {
       setScreenSize(window.innerWidth);
@@ -36,7 +50,20 @@ export const ContextProvider = ({ children }) => {
     }
   }, [screenSize])
   return (
-    <StateContext.Provider value={{ screenSize, setScreenSize, test: 'test', activeMenu, setActiveMenu, isClicked, handleClick, currentColor }}>
+    <StateContext.Provider value={{
+      activeMenu,
+      setActiveMenu,
+      isClicked,
+      handleClick,
+      screenSize,
+      setScreenSize,
+      currentColor,
+      currentMode,
+      setColor,
+      setMode,
+      themeSettings,
+      setThemeSettings,
+    }}>
       {children}
     </StateContext.Provider >
   )
